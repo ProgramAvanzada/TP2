@@ -1,5 +1,8 @@
 package polinomios;
 
+import java.io.*;
+import java.util.Scanner;
+
 public class Polinomios {
 	
 	private int grado;
@@ -14,6 +17,22 @@ public class Polinomios {
 			this.coeficientes[i] = vector[i];
 		}
 		
+	}
+	
+	
+	public Polinomios(String path){
+		File arch = new File(path);
+		try {
+			Scanner scan = new Scanner(arch);
+			grado = scan.nextInt();
+			coeficientes = new double[grado +1];
+			for(int i=0; i<= grado; i++){
+				coeficientes[i] = scan.nextDouble();
+			}
+			scan.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
