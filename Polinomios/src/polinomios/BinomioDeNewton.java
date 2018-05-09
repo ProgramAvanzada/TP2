@@ -33,7 +33,7 @@ class BinomioDeNewton {
 		return combinatoria * multiplicacionDeExp;
 	}
 	
-	private int factorial(int n) {
+	public int factorial(int n) {
         
 		if(vecFactorial[n] != 0)
 			return vecFactorial[n];
@@ -44,6 +44,7 @@ class BinomioDeNewton {
 		}
 		
 		for (int i = ultimoFactorial + 1 ; i <= n; i++) {
+			System.out.println("calculando factorial de " + i);
             vecFactorial[i] = vecFactorial[i-1] * i;
         }
 		
